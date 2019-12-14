@@ -14,9 +14,9 @@ class Expression {
 public:
 	Expression(string e):expression("("+e+")") {
 		//设置运算匹配优先级
-		patterns.push_back(Pattern{ regex("([\\d\\.]+)([\\^])([\\d\\.]+)"), false });
-		patterns.push_back(Pattern{ regex("([\\d\\.]+)([\\*/%])([\\d\\.]+)"), false });
-		patterns.push_back(Pattern{ regex("([\\d\\.]+)([\\+\\-])([\\d\\.]+)"), false });
+		patterns.push_back(Pattern{ regex("(-?[\\d\\.]+)([\\^])(-?[\\d\\.]+)"), false });
+		patterns.push_back(Pattern{ regex("(-?[\\d\\.]+)([\\*/%])(-?[\\d\\.]+)"), false });
+		patterns.push_back(Pattern{ regex("(-?[\\d\\.]+)([\\+\\-])(-?[\\d\\.]+)"), false });
 		operations["^"] = pow;
 		operations["*"] = mul;
 		operations["/"] = div;
